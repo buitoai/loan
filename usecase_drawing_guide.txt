@@ -1,0 +1,158 @@
+HƯỚNG DẪN CHI TIẾT VẼ USE CASE CHO HỆ THỐNG RA QUYẾT ĐỊNH CHO VAY
+
+PHẦN 1: BIỂU ĐỒ USE CASE TỔNG QUÁT (Hình 2.1)
+──────────────────────────────────────────────
+
+1. Vẽ 3 actor (tác nhân) bên trái:
+   • Customer (Khách hàng) - hình người
+   • Loan Officer (Nhân viên tín dụng) - hình người  
+   • Admin (Quản trị viên) - hình người
+
+2. Vẽ hệ thống (hình chữ nhật ở giữa) ghi "Loan Decision System"
+
+3. Kết nối các actor với use case:
+
+KHÁCH HÀNG (Customer):
+├── Đăng ký tài khoản
+├── Đăng nhập hệ thống
+├── Đăng ký khoản vay
+├── Xem trạng thái hồ sơ
+├── Cập nhật thông tin cá nhân
+├── Xem lịch sử vay
+└── Tính toán lãi suất ước tính
+
+NHÂN VIÊN TÍN DỤNG (Loan Officer):
+├── Quản lý hồ sơ vay
+├── Tính điểm tín dụng
+├── Phê duyệt khoản vay
+└── Xem báo cáo thống kê
+
+QUẢN TRỊ VIÊN (Admin):
+├── Quản lý khách hàng
+├── Cấu hình tham số hệ thống
+├── Xem báo cáo thống kê
+└── Quản lý người dùng hệ thống
+
+PHẦN 2: USE CASE CHI TIẾT CHO TỪNG CHỨC NĂNG
+─────────────────────────────────────────────
+
+Vẽ 14 biểu đồ use case chi tiết (Hình 2.2 đến 2.15):
+
+KHÁCH HÀNG (7 use case):
+1. Hình 2.2: Đăng ký tài khoản
+   • Actor: Customer
+   • Hệ thống: Xác thực email, tạo tài khoản
+   • Kết quả: Tài khoản được tạo, email xác nhận
+
+2. Hình 2.3: Đăng nhập hệ thống
+   • Actor: Customer
+   • Hệ thống: Kiểm tra username/password
+   • Kết quả: Truy cập vào dashboard
+
+3. Hình 2.4: Đăng ký khoản vay
+   • Actor: Customer
+   • Hệ thống: Validate form, lưu hồ sơ
+   • Kết quả: Hồ sơ ở trạng thái "Chờ xử lý"
+
+4. Hình 2.5: Xem trạng thái hồ sơ
+   • Actor: Customer
+   • Hệ thống: Truy vấn database
+   • Kết quả: Hiển thị trạng thái (Chờ, Đang xử lý, Duyệt, Từ chối)
+
+5. Hình 2.6: Cập nhật thông tin cá nhân
+   • Actor: Customer
+   • Hệ thống: Validate và cập nhật
+   • Kết quả: Thông tin mới được lưu
+
+6. Hình 2.7: Xem lịch sử vay
+   • Actor: Customer
+   • Hệ thống: Truy vấn lịch sử
+   • Kết quả: Danh sách các khoản vay trước
+
+7. Hình 2.8: Tính toán lãi suất ước tính
+   • Actor: Customer
+   • Hệ thống: Áp dụng công thức tính
+   • Kết quả: Hiển thị số tiền phải trả
+
+QUẢN TRỊ (7 use case):
+8. Hình 2.9: Quản lý hồ sơ vay
+   • Actor: Loan Officer
+   • Hệ thống: Hiển thị danh sách hồ sơ
+   • Kết quả: Có thể xem chi tiết từng hồ sơ
+
+9. Hình 2.10: Tính điểm tín dụng
+   • Actor: Loan Officer (hoặc tự động)
+   • Hệ thống: Chạy thuật toán tính điểm
+   • Kết quả: Điểm số từ 300-850
+
+10. Hình 2.11: Phê duyệt khoản vay
+    • Actor: Loan Officer
+    • Hệ thống: Ghi nhận quyết định
+    • Kết quả: Cập nhật trạng thái, gửi thông báo
+
+11. Hình 2.12: Quản lý khách hàng
+    • Actor: Admin
+    • Hệ thống: Hiển thị danh sách khách hàng
+    • Kết quả: Có thể xem thông tin chi tiết
+
+12. Hình 2.13: Cấu hình tham số hệ thống
+    • Actor: Admin
+    • Hệ thống: Lưu cấu hình
+    • Kết quả: Tham số mới có hiệu lực
+
+13. Hình 2.14: Xem báo cáo thống kê
+    • Actor: Admin/Loan Officer
+    • Hệ thống: Tổng hợp dữ liệu
+    • Kết quả: Biểu đồ, bảng số liệu
+
+14. Hình 2.15: Quản lý người dùng hệ thống
+    • Actor: Admin
+    • Hệ thống: CRUD operations
+    • Kết quả: Tài khoản được quản lý
+
+PHẦN 3: CÔNG CỤ VẼ BIỂU ĐỒ
+─────────────────────────
+• Microsoft Visio (chuyên nghiệp nhất)
+• draw.io (online, miễn phí)
+• Lucidchart (online)
+• PlantUML (text-based)
+• PowerPoint/Word Shapes (đơn giản)
+
+PHẦN 4: QUY TẮC TRÌNH BÀY
+─────────────────────────
+1. Màu sắc thống nhất:
+   • Customer: Xanh dương (#1F4E79)
+   • Loan Officer: Xanh lá (#2E7D32)
+   • Admin: Tím (#6A1B9A)
+   • Hệ thống: Xám (#616161)
+
+2. Kích thước: 
+   • Actor: 1.5cm x 2cm
+   • Use Case: Hình bầu dục 3cm x 1.5cm
+   • Hệ thống: Hình chữ nhật bao quanh use cases
+
+3. Đường kết nối:
+   • Liên kết thường: ───
+   • Include: <<include>> 
+   • Extend: <<extend>>
+
+PHẦN 5: MẪU BẢNG ĐẶC TẢ USE CASE
+─────────────────────────────────
+Tên use case: Đăng ký khoản vay
+Mô tả: Khách hàng điền thông tin và gửi hồ sơ vay
+Actor: Customer
+Điều kiện tiên quyết: 
+  • Đã đăng nhập hệ thống
+  • Có đủ thông tin cá nhân
+  • Có thông tin tài chính cơ bản
+Luồng sự kiện chính:
+  1. Khách hàng chọn "Đăng ký vay"
+  2. Hệ thống hiển thị form đăng ký
+  3. Khách hàng điền thông tin
+  4. Hệ thống validate dữ liệu
+  5. Nếu hợp lệ → lưu hồ sơ
+  6. Hiển thị thông báo thành công
+Kết quả:
+  • Hồ sơ được lưu với trạng thái "Chờ xử lý"
+  • ID hồ sơ được tạo
+  • Email xác nhận được gửi

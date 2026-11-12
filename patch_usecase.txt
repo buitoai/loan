@@ -1,0 +1,137 @@
+HƯỚNG DẪN CHỈNH SỬA USE CASE SECTION
+==================================================
+
+1. Mở file 'Lý Thị Phương - Formatted.docx' trong Word
+2. Tìm mục '2.1. Biểu đồ Use Case của hệ thống'
+3. Xóa từ mục đó đến trước '2.2. Đặc tả Use Case chi tiết'
+4. Thay thế bằng nội dung sau:
+
+2.1. Biểu đồ Use Case của hệ thống
+Biểu đồ Use case là công cụ mô hình hóa yêu cầu chức năng của hệ thống, thể hiện sự tương tác giữa các tác nhân (Actor) và hệ thống. Trong hệ thống ra quyết định cho vay tín dụng, các actor chính bao gồm:
+• Khách hàng (Customer): Người sử dụng hệ thống để đăng ký vay, theo dõi hồ sơ
+• Nhân viên tín dụng (Loan Officer): Nhân viên xử lý và phê duyệt hồ sơ
+• Quản trị viên (Admin): Quản lý hệ thống, cấu hình tham số, xem báo cáo
+2.1.1. Biểu đồ Use case tổng quát
+Biểu đồ Use case tổng quát thể hiện toàn bộ chức năng của hệ thống và mối quan hệ giữa các actor. Hệ thống ra quyết định cho vay tín dụng được chia thành hai nhóm chính:
+• Use case phía khách hàng: Các chức năng dành cho người dùng cuối
+• Use case phía quản trị: Các chức năng dành cho nhân viên và quản trị viên
+Hình 2.1. Biểu đồ Use case tổng quát
+(Hình vẽ thể hiện mối quan hệ giữa Customer, Loan Officer, Admin và các use case chính)
+2.1.2. Use case phía khách hàng
+Hình 2.2. Use case Đăng ký tài khoản
+Bảng đặc tả chi tiết:
+• Tên use case: Đăng ký tài khoản
+• Mô tả: Khách hàng tạo tài khoản trong hệ thống
+• Actor: Khách hàng mới
+• Điều kiện tiên quyết: Tài khoản được tạo, thông tin được lưu
+• Kết quả: Khách hàng có thể đăng nhập
+
+Hình 2.3. Use case Đăng nhập hệ thống
+Bảng đặc tả chi tiết:
+• Tên use case: Đăng nhập hệ thống
+• Mô tả: Xác thực thông tin đăng nhập
+• Actor: Khách hàng đã có tài khoản
+• Điều kiện tiên quyết: Thông tin đúng
+• Kết quả: Khách hàng được truy cập hệ thống
+
+Hình 2.4. Use case Đăng ký khoản vay
+Bảng đặc tả chi tiết:
+• Tên use case: Đăng ký khoản vay
+• Mô tả: Khách hàng điền thông tin và gửi hồ sơ vay
+• Actor: Khách hàng đã đăng nhập
+• Điều kiện tiên quyết: Đủ thông tin cá nhân và tài chính
+• Kết quả: Hồ sơ được gửi, trạng thái 'Chờ xử lý'
+
+Hình 2.5. Use case Xem hồ sơ vay
+Bảng đặc tả chi tiết:
+• Tên use case: Xem hồ sơ vay
+• Mô tả: Theo dõi trạng thái và chi tiết hồ sơ
+• Actor: Có hồ sơ đang xử lý
+• Điều kiện tiên quyết: Đã đăng nhập
+• Kết quả: Hiển thị thông tin và tiến trình
+
+Hình 2.6. Use case Cập nhật thông tin
+Bảng đặc tả chi tiết:
+• Tên use case: Cập nhật thông tin
+• Mô tả: Sửa đổi thông tin cá nhân
+• Actor: Thông tin thay đổi
+• Điều kiện tiên quyết: Đã đăng nhập
+• Kết quả: Thông tin được cập nhật
+
+Hình 2.7. Use case Xem lịch sử vay
+Bảng đặc tả chi tiết:
+• Tên use case: Xem lịch sử vay
+• Mô tả: Xem các khoản vay đã từng đăng ký
+• Actor: Có lịch sử vay
+• Điều kiện tiên quyết: Đã đăng nhập
+• Kết quả: Hiển thị danh sách lịch sử
+
+Hình 2.8. Use case Tính toán lãi suất
+Bảng đặc tả chi tiết:
+• Tên use case: Tính toán lãi suất
+• Mô tả: Ước tính khoản vay và lãi suất
+• Actor: Cần tính toán trước
+• Điều kiện tiên quyết: Nhập số tiền, thời hạn
+• Kết quả: Hiển thị kết quả ước tính
+2.1.3. Use case phía quản trị
+Hình 2.9. Use case Quản lý hồ sơ vay
+Bảng đặc tả chi tiết:
+• Tên use case: Quản lý hồ sơ vay
+• Mô tả: Xem, xử lý, phê duyệt hồ sơ vay
+• Actor: Nhân viên tín dụng, Admin
+• Điều kiện tiên quyết: Có hồ sơ chờ xử lý
+• Kết quả: Hồ sơ được cập nhật trạng thái
+
+Hình 2.10. Use case Tính điểm tín dụng
+Bảng đặc tả chi tiết:
+• Tên use case: Tính điểm tín dụng
+• Mô tả: Hệ thống tự động tính điểm dựa trên thông tin
+• Actor: Nhân viên tín dụng
+• Điều kiện tiên quyết: Đủ thông tin khách hàng
+• Kết quả: Điểm tín dụng được tính
+
+Hình 2.11. Use case Phê duyệt khoản vay
+Bảng đặc tả chi tiết:
+• Tên use case: Phê duyệt khoản vay
+• Mô tả: Quyết định duyệt/từ chối hồ sơ
+• Actor: Nhân viên tín dụng
+• Điều kiện tiên quyết: Có điểm tín dụng
+• Kết quả: Quyết định được gửi đến khách hàng
+
+Hình 2.12. Use case Quản lý khách hàng
+Bảng đặc tả chi tiết:
+• Tên use case: Quản lý khách hàng
+• Mô tả: Xem danh sách, thông tin khách hàng
+• Actor: Admin
+• Điều kiện tiên quyết: Có quyền quản trị
+• Kết quả: Hiển thị thông tin khách hàng
+
+Hình 2.13. Use case Quản lý tham số hệ thống
+Bảng đặc tả chi tiết:
+• Tên use case: Quản lý tham số hệ thống
+• Mô tả: Cấu hình lãi suất, điều kiện vay
+• Actor: Admin
+• Điều kiện tiên quyết: Có quyền quản trị
+• Kết quả: Tham số được cập nhật
+
+Hình 2.14. Use case Xem báo cáo thống kê
+Bảng đặc tả chi tiết:
+• Tên use case: Xem báo cáo thống kê
+• Mô tả: Báo cáo hoạt động, tỷ lệ duyệt/từ chối
+• Actor: Admin, Nhân viên
+• Điều kiện tiên quyết: Có dữ liệu thống kê
+• Kết quả: Hiển thị báo cáo
+
+Hình 2.15. Use case Quản lý người dùng
+Bảng đặc tả chi tiết:
+• Tên use case: Quản lý người dùng
+• Mô tả: Thêm/xóa/sửa tài khoản nhân viên
+• Actor: Admin
+• Điều kiện tiên quyết: Có quyền quản trị
+• Kết quả: Tài khoản được quản lý
+
+
+LƯU Ý:
+- Giữ nguyên formatting (Heading 2, Heading 3, Normal, List Bullet)
+- Các hình 2.1, 2.2,... là placeholder, cần vẽ biểu đồ use case tương ứng
+- Điều chỉnh nội dung cho phù hợp với hệ thống thực tế
