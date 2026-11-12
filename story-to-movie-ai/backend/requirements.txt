@@ -1,0 +1,31 @@
+# FastAPI Backend
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+pydantic==2.5.3
+
+# AI & ML
+torch==2.1.2
+torchvision==0.16.2
+diffusers==0.25.0
+transformers==4.36.2
+accelerate==0.25.0
+
+# Image & Video Processing
+Pillow==10.2.0
+opencv-python==4.9.0.80
+moviepy==1.0.3
+imageio==2.33.1
+imageio-ffmpeg==0.4.9
+
+# Text-to-Speech
+TTS==0.22.0
+
+# Ollama Client
+ollama==0.1.6
+
+# Utilities
+numpy==1.26.3
+requests==2.31.0
+aiofiles==23.2.1
+python-dotenv==1.0.0

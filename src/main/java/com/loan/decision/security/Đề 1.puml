@@ -1,0 +1,73 @@
+@startuml
+package "PRESENTATION LAYER" {
+  class ProductController <<Component>> {
+    + GetProducts() : IActionResult
+    + GetProductById(id: int) : IActionResult
+    + CreateProduct(product: Product) : IActionResult
+    + UpdateProduct(id: int, product: Product)
+    + DeleteProduct(id: int) : IActionResult
+  }
+}
+
+package "BUSINESS LOGIC LAYER" {
+  class ProductService <<Component>> {
+    - _productRepository : IProductRepository
+    + GetAllProducts() : List<Product>
+    + GetProductById(id: int) : Product
+    + AddProduct(product: Product) : void
+    + UpdateProduct(product: Product) : void
+    + DeleteProduct(id: int) : void
+    + SearchProducts(criteria: string) : List<Product>
+    + ValidateProduct(product: Product) : bool
+  }
+}
+
+package "DATA ACCESS LAYER" {
+  interface IProductRepository <<Interface>> {
+    + GetAll() : List<Product>
+    + GetById(id: int) : Product
+    + Add(product: Product) : void
+    + Update(product: Product) : void
+    + Delete(id: int) : void
+    + Find(predicate: Expression<Func>) : List
+  }
+
+  class ProductRepository <<Component>> {
+    - _dataSource : DataSource
+    + GetAll() : List<Product>
+    + GetById(id: int) : Product
+    + Add(product: Product) : void
+    + Update(product: Product) : void
+    + Delete(id: int) : void
+    + Find(predicate: Expression<Func>) : List
+  }
+}
+
+package "INFRASTRUCTURE LAYER" {
+  class DataSource <<Component>> {
+    - _connectionString : string
+    - _dbContext : DbContext
+    + GetConnection() : IDbConnection
+    + ExecuteQuery<T>(query: string) : List<T>
+    + ExecuteCommand(command: string) : int
+  }
+}
+
+package "DOMAIN MODEL" {
+  class Product <<Entity>> {
+    + Id : int
+    + Name : string
+    + Category : string
+    + Price : decimal
+    + Quantity : int
+    + Origin : string
+    + CreatedDate : DateTime
+    + UpdatedDate : DateTime
+  }
+}
+
+ProductController ..> ProductService : <<uses>>
+ProductService ..> IProductRepository : <<uses>>
+ProductRepository ..|> IProductRepository : <<implements>>
+ProductRepository ..> DataSource : <<uses>>
+@enduml
